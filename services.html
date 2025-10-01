@@ -64,39 +64,24 @@
       };
     </script>
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      html,
-      body {
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-      .faq-btn::after {
-        content: "▾";
-        margin-left: 0.5rem;
-        transition: transform 0.2s ease;
-      }
-      .faq-btn[aria-expanded="true"]::after {
-        transform: rotate(-180deg);
-      }
-      :root {
-        --anchor-offset: 120px;
-      }
-      [id] {
-        scroll-margin-top: var(--anchor-offset);
-      }
+      html { scroll-behavior: smooth; }
+      html, body { max-width: 100%; overflow-x: hidden; }
+      .faq-btn::after { content: "▾"; margin-left: 0.5rem; transition: transform 0.2s ease; }
+      .faq-btn[aria-expanded="true"]::after { transform: rotate(-180deg); }
+      :root { --anchor-offset: 120px; }
+      [id] { scroll-margin-top: var(--anchor-offset); }
     </style>
 
-    <!-- LocalBusiness schema (kept, host normalized + correct image path) -->
+    <!-- LocalBusiness schema (with @id for provider references) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": "https://coker-plumbing-septic.com/#business",
         "name": "Coker Plumbing & Septic",
         "telephone": "+1-850-999-3220",
         "url": "https://coker-plumbing-septic.com/",
-        "image": "https://coker-plumbing-septic.com/img/cokerlogo.png",
+        "image": "https://coker-plumbing-septic.com/logo.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "4610 Lennox Pl",
@@ -131,7 +116,7 @@
       }
     </script>
 
-    <!-- ItemList of services matching the grid -->
+    <!-- ItemList of services matching the grid (provider references @id) -->
     <script type="application/ld+json">
       {
         "@context":"https://schema.org",
@@ -146,7 +131,7 @@
               "@type":"Service",
               "name":"Septic Pumping",
               "serviceType":"Septic Pumping",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/septic.html#septic-pumping"
             }
@@ -158,7 +143,7 @@
               "@type":"Service",
               "name":"Drain Fields",
               "serviceType":"Drain Field Repair & Replacement",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/septic.html#drain-fields"
             }
@@ -170,7 +155,7 @@
               "@type":"Service",
               "name":"Clogged Drains",
               "serviceType":"Drain Cleaning",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#clogged-drains"
             }
@@ -182,7 +167,7 @@
               "@type":"Service",
               "name":"Leak Detection",
               "serviceType":"Leak Detection",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#leak-detection"
             }
@@ -194,7 +179,7 @@
               "@type":"Service",
               "name":"Repiping",
               "serviceType":"Repiping",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#repiping"
             }
@@ -206,7 +191,7 @@
               "@type":"Service",
               "name":"Toilet Repairs",
               "serviceType":"Toilet Repair & Replacement",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#toilet-repairs"
             }
@@ -218,7 +203,7 @@
               "@type":"Service",
               "name":"Sewer Backups",
               "serviceType":"Sewer Backup Clearing",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#sewer-backups"
             }
@@ -230,7 +215,7 @@
               "@type":"Service",
               "name":"Emergency Plumbing",
               "serviceType":"24/7 Emergency Plumbing",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#emergency"
             }
@@ -242,7 +227,7 @@
               "@type":"Service",
               "name":"Water Heater Service",
               "serviceType":"Water Heater Repair & Replacement",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#water-heaters"
             }
@@ -254,7 +239,7 @@
               "@type":"Service",
               "name":"Fixture Installations",
               "serviceType":"Plumbing Fixture Installation",
-              "provider":{"@type":"LocalBusiness","name":"Coker Plumbing & Septic"},
+              "provider":{"@id":"https://coker-plumbing-septic.com/#business"},
               "areaServed":{"@type":"AdministrativeArea","name":"Escambia County, FL"},
               "url":"https://coker-plumbing-septic.com/services.html#fixtures"
             }
@@ -1124,7 +1109,7 @@
         </div>
       </div>
 
-      <!-- Article schema (kept; host normalized) -->
+      <!-- Article schema (kept; @id updated to non-www) -->
       <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -1271,7 +1256,7 @@
             <h2 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Get Your Free Estimate</h2>
             <p class="mt-2 text-slate-700">Most requests answered the same day.</p>
 
-            <!-- NOTE: give the form an id and action (Formspree) -->
+            <!-- NOTE: give the form an id and action (Formspree). Replace YOUR_FORMSPREE_ID below -->
             <form id="estimateForm" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"
                   action="https://formspree.io/f/movkegbb" method="POST">
               <!-- Honeypot to cut spam -->
@@ -1543,7 +1528,7 @@
           var spacer = document.getElementById("topSpacer");
           var header = document.querySelector("#siteTop header");
 
-        function calcTopHeights() {
+          function calcTopHeights() {
             var headerH = header ? header.offsetHeight : 0;
             var bannerVisible = banner && banner.style.display !== "none";
             var bannerH = bannerVisible ? banner.offsetHeight : 0;
