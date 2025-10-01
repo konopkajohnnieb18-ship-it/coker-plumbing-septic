@@ -1,3 +1,4 @@
+<!-- /index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,7 @@
 "
   />
   <link rel="icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://coker-plumbing-septic.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -47,7 +49,6 @@
     html, body { max-width: 100%; overflow-x: hidden; }
     :root { --anchor-offset: 120px; }
     [id] { scroll-margin-top: var(--anchor-offset); }
-    /* legacy lightbox backdrop (kept from your page) */
     .lb-backdrop {
       position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75);
       display: none; align-items: center; justify-content: center; z-index: 60;
@@ -55,38 +56,179 @@
     .lb-backdrop.open { display: flex; }
   </style>
 
-  <!-- LocalBusiness schema -->
+  <!-- Consolidated JSON-LD (non-www canonical) -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Coker Plumbing & Septic",
-      "telephone": "+1-850-999-3220",
-      "image": "https://www.coker-plumbing-septic.com/logo.png",
-      "url": "https://www.coker-plumbing-septic.com/",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "4610 Lennox Pl",
-        "addressLocality": "Pensacola",
-        "addressRegion": "FL",
-        "postalCode": "32514",
-        "addressCountry": "US"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "Plumber"],
+        "@id": "https://coker-plumbing-septic.com/#plumber",
+        "name": "Coker Plumbing & Septic",
+        "url": "https://coker-plumbing-septic.com/",
+        "telephone": "+1-850-999-3220",
+        "logo": "https://coker-plumbing-septic.com/img/cokerlogo.png",
+        "image": [
+          "https://coker-plumbing-septic.com/img/cokerteam.png",
+          "https://coker-plumbing-septic.com/img/cokerog.webp"
+        ],
+        "priceRange": "$$",
+        "slogan": "4th-generation family-owned plumbing & septic company",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4610 Lennox Pl",
+          "addressLocality": "Pensacola",
+          "addressRegion": "FL",
+          "postalCode": "32514",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Escambia County, FL" },
+          { "@type": "AdministrativeArea", "name": "Santa Rosa County, FL" },
+          { "@type": "City", "name": "Pensacola, FL" },
+          { "@type": "City", "name": "Gulf Breeze, FL" },
+          { "@type": "City", "name": "Milton, FL" },
+          { "@type": "City", "name": "Cantonment, FL" },
+          { "@type": "City", "name": "Molino, FL" }
+        ],
+        "hasMap": "https://www.google.com/maps/dir/?api=1&destination=4610+Lennox+Pl,+Pensacola,+FL+32514",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "ratingCount": "90"
+        },
+        "knowsAbout": [
+          "Septic pumping",
+          "Drain fields",
+          "Clogged drains",
+          "Leak detection",
+          "Repiping",
+          "Toilet repairs",
+          "Sewer backups",
+          "Emergency plumbing"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-850-999-3220",
+            "contactType": "customer service",
+            "areaServed": "US-FL",
+            "availableLanguage": "en"
+          }
+        ],
+        "hasCredential": { "@id": "https://coker-plumbing-septic.com/#license" },
+        "hasOfferCatalog": { "@id": "https://coker-plumbing-septic.com/#services" }
       },
-      "areaServed": "Escambia County, Florida",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.5",
-        "ratingCount": "90"
+      {
+        "@type": "Organization",
+        "@id": "https://coker-plumbing-septic.com/#org",
+        "name": "Coker Plumbing & Septic",
+        "url": "https://coker-plumbing-septic.com/",
+        "logo": "https://coker-plumbing-septic.com/img/cokerlogo.png",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-850-999-3220",
+            "contactType": "customer service",
+            "areaServed": "US-FL",
+            "availableLanguage": "en"
+          }
+        ]
       },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "00:00",
-          "closes": "23:59"
+      {
+        "@type": "WebSite",
+        "@id": "https://coker-plumbing-septic.com/#website",
+        "url": "https://coker-plumbing-septic.com/",
+        "name": "Coker Plumbing & Septic",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://coker-plumbing-septic.com/#org" }
+      },
+      {
+        "@type": ["WebPage", "CollectionPage", "HomePage"],
+        "@id": "https://coker-plumbing-septic.com/#webpage",
+        "url": "https://coker-plumbing-septic.com/",
+        "name": "Coker Plumbing & Septic | 24/7 Licensed Plumber & Septic Service Escambia & Santa Rosa County",
+        "isPartOf": { "@id": "https://coker-plumbing-septic.com/#website" },
+        "about": { "@id": "https://coker-plumbing-septic.com/#plumber" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "@id": "https://coker-plumbing-septic.com/#hero-image",
+          "url": "https://coker-plumbing-septic.com/img/cokerteam.png"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coker-plumbing-septic.com/" }
+          ]
         }
-      ]
-    }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://coker-plumbing-septic.com/#faq-septic",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How often should I pump?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most homes: every 3–5 years; heavy use homes may need sooner."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I wait if things seem fine?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Delays can cause backups or drain field damage—far costlier than routine service."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Emergency septic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes—24/7. Call 850-999-3220."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://coker-plumbing-septic.com/#services",
+        "name": "Plumbing & Septic Services",
+        "url": "https://coker-plumbing-septic.com/services.html",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Septic Pumping", "serviceType": "Septic Pumping", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drain Fields", "serviceType": "Drain Field Repair & Replacement", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Clogged Drains", "serviceType": "Drain Cleaning", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Leak Detection", "serviceType": "Leak Detection", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Repiping", "serviceType": "Repiping", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Toilet Repairs", "serviceType": "Toilet Repair", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sewer Backups", "serviceType": "Sewer & Drain Service", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Plumbing", "serviceType": "Emergency Plumbing (24/7)", "provider": { "@id": "https://coker-plumbing-septic.com/#plumber" } } }
+        ]
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "@id": "https://coker-plumbing-septic.com/#license",
+        "credentialCategory": "Professional license",
+        "identifier": "RF11067923",
+        "name": "Florida Plumbing Contractor License",
+        "issuedBy": {
+          "@type": "GovernmentOrganization",
+          "name": "Florida Department of Business and Professional Regulation"
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body class="bg-white text-slate-800 font-sans">
@@ -461,7 +603,7 @@
     </div>
   </section>
 
-  <!-- About Coker (clean, scannable, SEO-friendly) -->
+  <!-- About Coker -->
   <section id="about" class="py-14 md:py-18 bg-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-[1fr,360px] gap-10 items-start">
       <article class="max-w-3xl leading-relaxed text-slate-700 space-y-6">
@@ -521,35 +663,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Optional Organization schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Coker Plumbing & Septic",
-        "url": "https://www.coker-plumbing-septic.com/",
-        "logo": "https://www.coker-plumbing-septic.com/logo.png",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+1-850-999-3220",
-            "contactType": "customer service",
-            "areaServed": "US-FL"
-          }
-        ],
-        "areaServed": [
-          { "@type": "AdministrativeArea", "name": "Escambia County, FL" },
-          { "@type": "AdministrativeArea", "name": "Santa Rosa County, FL" },
-          { "@type": "City", "name": "Pensacola, FL" },
-          { "@type": "City", "name": "Gulf Breeze, FL" },
-          { "@type": "City", "name": "Milton, FL" },
-          { "@type": "City", "name": "Cantonment, FL" },
-          { "@type": "City", "name": "Molino, FL" }
-        ],
-        "slogan": "4th-generation family-owned plumbing & septic company"
-      }
-    </script>
   </section>
 
   <!-- Contact / Estimate -->
@@ -560,17 +673,13 @@
           <h2 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Get Your Free Estimate</h2>
           <p class="mt-2 text-slate-700">Most requests answered the same day.</p>
 
-          <!-- NOTE: give the form an id and action (Formspree). Replace YOUR_FORMSPREE_ID below -->
           <form
             id="estimateForm"
             class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"
             action="https://formspree.io/f/movkegbb"
             method="POST"
           >
-            <!-- Honeypot to cut spam -->
             <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-
-            <!-- We’ll overwrite this subject dynamically in JS before submit -->
             <input type="hidden" name="_subject" value="Website Free Estimate Request" />
             <input type="hidden" name="page" value="/" />
 
@@ -622,7 +731,6 @@
             </label>
 
             <div class="md:col-span-2 flex flex-wrap gap-3 items-center">
-              <!-- Submit: desktop only -->
               <button
                 id="submitBtn"
                 type="submit"
@@ -631,7 +739,6 @@
                 Submit Request
               </button>
 
-              <!-- Mobile-only SMS CTA -->
               <button
                 type="button"
                 id="textFormBtn"
@@ -649,14 +756,13 @@
         </div>
 
         <div class="lg:col-span-1 min-w-0">
-          <!-- QR + bullets: hide on mobile -->
           <div class="hidden md:block rounded-2xl border border-brandLite p-6 sticky top-24">
             <h3 class="font-display text-xl font-extrabold text-brandBlue">Scan to Request Service</h3>
             <p class="mt-1 text-slate-700">Open your camera and scan to jump to this form.</p>
             <img
               class="mt-4 w-44 h-44"
               alt="QR code to Free Estimate form"
-              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.coker-plumbing-septic.com/#estimate"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://coker-plumbing-septic.com/#estimate"
             />
             <ul class="mt-6 space-y-2 text-slate-700">
               <li>• Free Estimates</li>
@@ -733,7 +839,6 @@
       var yEl = document.getElementById("y");
       if (yEl) yEl.textContent = new Date().getFullYear();
 
-      // Mobile menu
       (function () {
         var btn = $("#mobileMenuBtn");
         var panel = $("#mobileMenu");
@@ -746,7 +851,6 @@
         }
       })();
 
-      // Click-to-call tracking (no-op safe)
       $all('a[href^="tel:"]').forEach(function (a) {
         a.addEventListener("click", function () {
           try {
@@ -758,7 +862,6 @@
         });
       });
 
-      // Prefill + smooth scroll to Estimate
       function prefillServiceAndScroll(serviceValue) {
         var sel = $("#serviceSelect");
         if (sel && serviceValue) {
@@ -779,7 +882,6 @@
         }, 300);
       }
 
-      // service-card clicks + keyboard
       $all(".service-card").forEach(function (card) {
         var v = card.getAttribute("data-service");
         card.addEventListener("click", function () { prefillServiceAndScroll(v); });
@@ -790,7 +892,6 @@
         });
       });
 
-      // Deep link ?service= or #service=
       (function () {
         function getParam(searchStr, key) {
           var re = new RegExp("[?&]" + key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "=([^&]*)");
@@ -802,7 +903,6 @@
         if (svc) prefillServiceAndScroll(svc);
       })();
 
-      // Fixed header/promo spacer + anchor offset
       (function () {
         var KEY = "promo24_seen_session";
         var banner = document.getElementById("promoBanner");
@@ -832,7 +932,6 @@
         }
       })();
 
-      // ===== Formspree submit (AJAX) + Mobile "Text This Form" =====
       (function () {
         var form = document.getElementById("estimateForm");
         var submitBtn = document.getElementById("submitBtn");
@@ -851,12 +950,10 @@
           return (el && el.value ? el.value : "").trim();
         }
 
-        // --- AJAX submit to Formspree
         if (form) {
           form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // Update subject dynamically
             var subj = "Free Estimate — " + (v("#serviceSelect") || "General") + " — " + (v('input[name="name"]') || "Customer");
             var subjectInput = form.querySelector('input[name="_subject"]');
             if (subjectInput) subjectInput.value = subj;
@@ -864,7 +961,6 @@
             setStatus("Sending your request…", true);
             if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
 
-            // IMPORTANT: replace YOUR_FORMSPREE_ID in the form action
             var endpoint = form.getAttribute("action");
             var data = new FormData(form);
 
@@ -890,7 +986,6 @@
           });
         }
 
-        // --- Mobile: open SMS app with prefilled body
         if (smsBtn && form) {
           function isIOS(){ return /iPhone|iPad|iPod/i.test(navigator.userAgent); }
 
@@ -922,5 +1017,3 @@
   <script src="https://elfsightcdn.com/platform.js" async></script>
 </body>
 </html>
-
-
