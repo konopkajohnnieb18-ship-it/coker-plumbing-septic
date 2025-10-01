@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coker-plumbing-septic.com/sitemap.xml
