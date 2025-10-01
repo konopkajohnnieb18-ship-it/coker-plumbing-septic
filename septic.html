@@ -1,4 +1,4 @@
-<!-- /septic.html — ES5-safe JS, E.164 tel links, consolidated JSON-LD, non-www canonical -->
+<!-- /septic.html — ES5-safe JS, no optional chaining, E.164 tel links, hero image path fixed -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,26 +10,36 @@
       content="Septic services in Escambia County: septic tank pumping, drain field repair & replacement, emergency septic service, septic repairs, camera inspections, grease traps. 4th-generation local team. Call or text 850-999-3220."
     />
 
+    <!-- Canonical + theme + icons -->
+    <link rel="canonical" href="https://www.coker-plumbing-septic.com/septic.html" />
+    <meta name="theme-color" content="#34659b" />
     <link rel="icon" href="/favicon.ico" />
-    <link rel="canonical" href="https://coker-plumbing-septic.com/septic.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Open Graph / Twitter -->
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Coker Plumbing & Septic" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://coker-plumbing-septic.com/septic.html" />
     <meta property="og:title" content="Septic Services | Coker Plumbing & Septic (Escambia County)" />
-    <meta property="og:description" content="Septic tank pumping, drain field repair & replacement, emergency septic service, septic repairs, camera inspections, grease traps. Call 850-999-3220." />
-    <meta property="og:image" content="https://coker-plumbing-septic.com/img/107.webp" />
+    <meta property="og:description" content="Septic tank pumping, drain field repair & replacement, emergency septic, inspections, and more. Free estimates. Call 850-999-3220." />
+    <meta property="og:url" content="https://www.coker-plumbing-septic.com/septic.html" />
+    <meta property="og:image" content="https://www.coker-plumbing-septic.com/img/cokerog.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Septic Services | Coker Plumbing & Septic" />
-    <meta name="twitter:description" content="4th-generation septic pros serving Escambia & Santa Rosa County. 24/7. Free estimates." />
-    <meta name="twitter:image" content="https://coker-plumbing-septic.com/img/107.webp" />
+    <meta name="twitter:description" content="Septic pumping, drain fields, emergency septic, repairs, inspections, grease traps. Licensed & insured. Free estimates." />
+    <meta name="twitter:image" content="https://www.coker-plumbing-septic.com/img/cokerog.webp" />
 
+    <!-- Fonts + hero preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Lato:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="/img/107.webp" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -62,91 +72,47 @@
       [id] { scroll-margin-top: var(--anchor-offset); }
     </style>
 
-    <!-- Consolidated JSON-LD (@graph) -->
+    <!-- LocalBusiness schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://coker-plumbing-septic.com/#business",
-          "name": "Coker Plumbing & Septic",
-          "url": "https://coker-plumbing-septic.com/",
-          "telephone": "+1-850-999-3220",
-          "image": "https://coker-plumbing-septic.com/img/cokerog.webp",
-          "logo": "https://coker-plumbing-septic.com/img/cokerlogo.png",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "4610 Lennox Pl",
-            "addressLocality": "Pensacola",
-            "addressRegion": "FL",
-            "postalCode": "32514",
-            "addressCountry": "US"
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Coker Plumbing & Septic",
+        "telephone": "+1-850-999-3220",
+        "url": "https://www.coker-plumbing-septic.com/",
+        "image": "https://www.coker-plumbing-septic.com/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4610 Lennox Pl",
+          "addressLocality": "Pensacola",
+          "addressRegion": "FL",
+          "postalCode": "32514",
+          "addressCountry": "US"
+        },
+        "areaServed": "Escambia County, Florida"
+      }
+    </script>
+
+    <!-- BreadcrumbList for Septic Services -->
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Home",
+            "item":"https://www.coker-plumbing-septic.com/"
           },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-              "opens": "00:00",
-              "closes": "23:59"
-            }
-          ],
-          "areaServed": [
-            { "@type": "AdministrativeArea", "name": "Escambia County, FL" },
-            { "@type": "AdministrativeArea", "name": "Santa Rosa County, FL" }
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://coker-plumbing-septic.com/#website",
-          "url": "https://coker-plumbing-septic.com/",
-          "name": "Coker Plumbing & Septic"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://coker-plumbing-septic.com/septic.html#webpage",
-          "url": "https://coker-plumbing-septic.com/septic.html",
-          "name": "Septic Services | Coker Plumbing & Septic (Escambia County)",
-          "description": "Septic tank pumping, drain field repair & replacement, emergency septic service, septic repairs, camera inspections, grease traps. 4th-generation local team.",
-          "isPartOf": { "@id": "https://coker-plumbing-septic.com/#website" },
-          "about": { "@id": "https://coker-plumbing-septic.com/#business" },
-          "primaryImageOfPage": { "@type": "ImageObject", "url": "https://coker-plumbing-septic.com/img/107.webp" },
-          "breadcrumb": { "@id": "https://coker-plumbing-septic.com/septic.html#breadcrumb" }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://coker-plumbing-septic.com/septic.html#breadcrumb",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://coker-plumbing-septic.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Septic Services", "item": "https://coker-plumbing-septic.com/septic.html" }
-          ]
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://coker-plumbing-septic.com/septic.html#services",
-          "name": "Septic Services",
-          "itemListElement": [
-            { "@type": "Service", "@id": "https://coker-plumbing-septic.com/septic.html#svc-pumping", "name": "Septic Pumping", "serviceType": "Septic tank pumping", "url": "https://coker-plumbing-septic.com/septic.html#septic-pumping", "areaServed": ["Escambia County, FL","Santa Rosa County, FL"], "provider": { "@id": "https://coker-plumbing-septic.com/#business" } },
-            { "@type": "Service", "@id": "https://coker-plumbing-septic.com/septic.html#svc-drainfields", "name": "Drain Field Repair & Replacement", "serviceType": "Drain field repair and replacement", "url": "https://coker-plumbing-septic.com/septic.html#drain-fields", "areaServed": ["Escambia County, FL","Santa Rosa County, FL"], "provider": { "@id": "https://coker-plumbing-septic.com/#business" } },
-            { "@type": "Service", "@id": "https://coker-plumbing-septic.com/septic.html#svc-emergency", "name": "Emergency Septic Service (24/7)", "serviceType": "Emergency septic service", "url": "https://coker-plumbing-septic.com/septic.html#emergency-septic", "areaServed": ["Escambia County, FL","Santa Rosa County, FL"], "provider": { "@id": "https://coker-plumbing-septic.com/#business" } },
-            { "@type": "Service", "@id": "https://coker-plumbing-septic.com/septic.html#svc-repairs", "name": "Septic Tank Repairs", "serviceType": "Septic repairs", "url": "https://coker-plumbing-septic.com/septic.html#septic-repairs", "areaServed": ["Escambia County, FL","Santa Rosa County, FL"], "provider": { "@id": "https://coker-plumbing-septic.com/#business" } },
-            { "@type": "Service", "@id": "https://coker-plumbing-septic.com/septic.html#svc-camera", "name": "Sewer & Septic Camera Inspections", "serviceType": "Camera inspections", "url": "https://coker-plumbing-septic.com/septic.html#camera-inspections", "areaServed": ["Escambia County, FL","Santa Rosa County, FL"], "provider": { "@id": "https://coker-plumbing-septic.com/#business" } },
-            { "@type": "Service", "@id": "https://coker-plumbing-septic.com/septic.html#svc-grease", "name": "Grease Trap Service (Commercial)", "serviceType": "Grease trap pumping and maintenance", "url": "https://coker-plumbing-septic.com/septic.html#grease-traps", "areaServed": ["Escambia County, FL","Santa Rosa County, FL"], "provider": { "@id": "https://coker-plumbing-septic.com/#business" } }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://coker-plumbing-septic.com/septic.html#faq",
-          "mainEntity": [
-            { "@type": "Question", "name": "How often should I pump my septic tank?", "acceptedAnswer": { "@type": "Answer", "text": "Most homes every 3–5 years; heavy-use homes sooner. We can check levels and advise the ideal schedule." } },
-            { "@type": "Question", "name": "What are signs my drain field is failing?", "acceptedAnswer": { "@type": "Answer", "text": "Standing water, soggy yard, sewage odors, or slow fixtures across the home. We’ll diagnose and provide options." } },
-            { "@type": "Question", "name": "Do you handle emergency septic backups?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — call 850-999-3220. We respond 24/7." } },
-            { "@type": "Question", "name": "Can you handle permits & inspections?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We manage permits and county compliance for repairs and drain fields." } },
-            { "@type": "Question", "name": "Do you service grease traps?", "acceptedAnswer": { "@type": "Answer", "text": "We provide commercial grease trap pumping and maintenance with documentation." } }
-          ]
-        }
-      ]
-    }
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Septic Services",
+            "item":"https://www.coker-plumbing-septic.com/septic.html"
+          }
+        ]
+      }
     </script>
   </head>
   <body class="bg-white text-slate-800 font-sans">
@@ -163,7 +129,7 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6">
           <div class="flex items-center justify-between h-16">
             <a href="/" class="flex items-center gap-3">
-              <img src="/img/cokerlogo.png" alt="Coker Plumbing & Septic logo" class="h-16 w-auto" />
+              <img src="/img/cokerlogo.png" alt="Coker Plumbing & Septic logo" class="h-16 w-auto" decoding="async" />
               <span class="sr-only">Coker Plumbing & Septic</span>
             </a>
 
@@ -185,7 +151,7 @@
               aria-expanded="false"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
@@ -210,12 +176,19 @@
       <div id="promoBanner" class="bg-brandBlue text-white shadow-soft">
         <div class="max-w-7xl mx-auto px-3 md:px-6 py-2 flex items-center justify-between gap-2">
           <p class="flex-1 min-w-0 text-xs sm:text-base leading-5 truncate">
-            <span class="font-extrabold">Looking for 24/7 service?</span> We answer after hours!
+            <span class="font-extrabold">Looking for 24/7 service?</span>
+            We answer after hours!
           </p>
           <div class="flex items-center gap-1.5 sm:gap-2">
-            <a href="tel:+18509993220" class="inline-flex items-center justify-center rounded-md bg-brandOrange px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-bold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/60">Call</a>
-            <a href="#estimate" class="inline-flex items-center justify-center rounded-md bg-white px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-brandBlue hover:bg-brandLite focus:outline-none focus:ring-2 focus:ring-white/60">Free Estimate</a>
-            <button id="promoDismiss" class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-1.5 text-xs text-white hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/60" aria-label="Dismiss announcement">✕</button>
+            <a href="tel:+18509993220" class="inline-flex items-center justify-center rounded-md bg-brandOrange px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-bold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/60">
+              Call
+            </a>
+            <a href="#estimate" class="inline-flex items-center justify-center rounded-md bg-white px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-brandBlue hover:bg-brandLite focus:outline-none focus:ring-2 focus:ring-white/60">
+              Free Estimate
+            </a>
+            <button id="promoDismiss" class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-1.5 text-xs text-white hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/60" aria-label="Dismiss announcement">
+              ✕
+            </button>
           </div>
         </div>
       </div>
@@ -233,13 +206,20 @@
               Septic Services in Escambia County — Pumping, Repairs & Drain Fields
             </h1>
             <p class="mt-3 text-slate-700 text-lg">
-              When septic problems strike, you can’t wait. We’ve been the local name since the 1930s — licensed, insured, and available 24/7.
+              When septic problems strike, you can’t wait. We’ve been the local
+              name since the 1930s — licensed, insured, and available 24/7.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="tel:+18509993220" class="px-6 py-3 rounded-lg bg-brandOrange text-white font-bold shadow-soft hover:opacity-90">
+              <a
+                href="tel:+18509993220"
+                class="px-6 py-3 rounded-lg bg-brandOrange text-white font-bold shadow-soft hover:opacity-90"
+              >
                 Call / Text 850-999-3220
               </a>
-              <a href="#estimate" class="px-6 py-3 rounded-lg bg-brandBlue text-white font-bold hover:bg-brandSteel">
+              <a
+                href="#estimate"
+                class="px-6 py-3 rounded-lg bg-brandBlue text-white font-bold hover:bg-brandSteel"
+              >
                 Request Free Estimate
               </a>
             </div>
@@ -249,10 +229,12 @@
           </div>
 
           <div class="rounded-xl overflow-hidden shadow-soft">
+            <!-- Use an image that actually exists in /img; 107.webp is in your repo -->
             <img
               src="/img/107.webp"
               alt="Septic pumping and excavation in Escambia County"
               class="w-full h-64 md:h-72 object-cover"
+              width="1600" height="900" fetchpriority="high"
             />
           </div>
         </div>
@@ -301,14 +283,22 @@
           <div class="flex flex-col md:flex-row items-center gap-8">
             <div class="w-full md:w-1/2">
               <div class="h-56 md:h-72 rounded-xl overflow-hidden md:max-w-[560px] md:mr-auto">
-                <img src="/img/107.webp" alt="Septic truck pumping a tank in Escambia County" class="w-full h-full object-cover" />
+                <img
+                  src="/img/107.webp"
+                  alt="Septic truck pumping a tank in Escambia County"
+                  class="w-full h-full object-cover"
+                  loading="lazy" decoding="async"
+                />
               </div>
             </div>
             <div class="w-full md:w-1/2">
               <h3 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Septic Pumping</h3>
               <p class="mt-3 text-slate-700">
-                Full pump-outs and proper disposal to prevent backups, odors, and slow drains. Most homes need pumping every
-                <strong>3–5 years</strong>, and heavy-use homes may need it sooner. We’ll check levels, expose the lids neatly, and leave the area clean.
+                Full pump-outs and proper disposal to prevent backups, odors,
+                and slow drains. Most homes need pumping every
+                <strong>3–5 years</strong>, and heavy-use homes may need it
+                sooner. We’ll check levels, expose the lids neatly, and leave
+                the area clean.
               </p>
               <ul class="mt-3 text-slate-700 list-disc pl-5">
                 <li>Tank locating, lids & risers serviced</li>
@@ -331,13 +321,21 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
               <div class="w-full md:w-1/2 md:order-2">
                 <div class="h-56 md:h-72 rounded-xl overflow-hidden md:max-w-[560px] md:ml-auto">
-                  <img src="/img/103.webp" alt="Drain field chambers being installed" class="w-full h-full object-cover" />
+                  <img
+                    src="/img/103.webp"
+                    alt="Drain field chambers being installed"
+                    class="w-full h-full object-cover"
+                    loading="lazy" decoding="async"
+                  />
                 </div>
               </div>
               <div class="w-full md:w-1/2 md:order-1">
                 <h3 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Drain Field Repair & Replacement</h3>
                 <p class="mt-3 text-slate-700">
-                  Standing water, lush stripes, and slow fixtures often point to a failing drain field. We diagnose the root cause and present options—from targeted repairs to complete replacement. Permits and county compliance are handled for you.
+                  Standing water, lush stripes, and slow fixtures often point to
+                  a failing drain field. We diagnose the root cause and present
+                  options—from targeted repairs to complete replacement. Permits
+                  and county compliance are handled for you.
                 </p>
                 <ul class="mt-3 text-slate-700 list-disc pl-5">
                   <li>Lines, chambers, baffles, distribution boxes</li>
@@ -360,13 +358,20 @@
           <div class="flex flex-col md:flex-row items-center gap-8">
             <div class="w-full md:w-1/2">
               <div class="h-56 md:h-72 rounded-xl overflow-hidden md:max-w-[560px] md:mr-auto">
-                <img src="/img/102.webp" alt="Emergency septic response at night" class="w-full h-full object-cover" />
+                <img
+                  src="/img/102.webp"
+                  alt="Emergency septic response at night"
+                  class="w-full h-full object-cover"
+                  loading="lazy" decoding="async"
+                />
               </div>
             </div>
             <div class="w-full md:w-1/2">
               <h3 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Emergency Septic Service (24/7)</h3>
               <p class="mt-3 text-slate-700">
-                Backups, overflows, or sewage smells? We respond day or night to stop the problem fast, protect your property, and provide a clear price before work begins.
+                Backups, overflows, or sewage smells? We respond day or night to
+                stop the problem fast, protect your property, and provide a
+                clear price before work begins.
               </p>
               <ul class="mt-3 text-slate-700 list-disc pl-5">
                 <li>Rapid diagnosis, clean work areas</li>
@@ -389,13 +394,20 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
               <div class="w-full md:w-1/2 md:order-2">
                 <div class="h-56 md:h-72 rounded-xl overflow-hidden md:max-w-[560px] md:ml-auto">
-                  <img src="/img/113.webp" alt="Septic tank lid and components" class="w-full h-full object-cover" />
+                  <img
+                    src="/img/113.webp"
+                    alt="Septic tank lid and components"
+                    class="w-full h-full object-cover"
+                    loading="lazy" decoding="async"
+                  />
                 </div>
               </div>
               <div class="w-full md:w-1/2 md:order-1">
                 <h3 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Septic Tank Repairs</h3>
                 <p class="mt-3 text-slate-700">
-                  From cracked lids and damaged baffles to inlet/outlet line issues, we repair components the right way—code-compliant and built to last.
+                  From cracked lids and damaged baffles to inlet/outlet line
+                  issues, we repair components the right way—code-compliant and
+                  built to last.
                 </p>
                 <ul class="mt-3 text-slate-700 list-disc pl-5">
                   <li>Lids, risers, baffles, tees</li>
@@ -418,13 +430,19 @@
           <div class="flex flex-col md:flex-row items-center gap-8">
             <div class="w-full md:w-1/2">
               <div class="h-56 md:h-72 rounded-xl overflow-hidden md:max-w-[560px] md:mr-auto">
-                <img src="/img/110.webp" alt="Sewer camera for septic inspections" class="w-full h-full object-cover" />
+                <img
+                  src="/img/110.webp"
+                  alt="Sewer camera for septic inspections"
+                  class="w-full h-full object-cover"
+                  loading="lazy" decoding="async"
+                />
               </div>
             </div>
             <div class="w-full md:w-1/2">
               <h3 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Sewer & Septic Camera Inspections</h3>
               <p class="mt-3 text-slate-700">
-                See what’s really happening underground before you decide. We provide photos or video and explain findings in plain language.
+                See what’s really happening underground before you decide. We
+                provide photos or video and explain findings in plain language.
               </p>
               <ul class="mt-3 text-slate-700 list-disc pl-5">
                 <li>Root intrusions, bellies, breaks</li>
@@ -447,13 +465,19 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
               <div class="w-full md:w-1/2 md:order-2">
                 <div class="h-56 md:h-72 rounded-xl overflow-hidden md:max-w-[560px] md:ml-auto">
-                  <img src="/img/114.jpeg" alt="Commercial grease trap service" class="w-full h-full object-cover" />
+                  <img
+                    src="/img/114.jpeg"
+                    alt="Commercial grease trap service"
+                    class="w-full h-full object-cover"
+                    loading="lazy" decoding="async"
+                  />
                 </div>
               </div>
               <div class="w-full md:w-1/2 md:order-1">
                 <h3 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Grease Trap Service (Commercial)</h3>
                 <p class="mt-3 text-slate-700">
-                  Reliable pumping and maintenance to stay compliant and avoid costly shutdowns. Flexible scheduling to fit your hours.
+                  Reliable pumping and maintenance to stay compliant and avoid
+                  costly shutdowns. Flexible scheduling to fit your hours.
                 </p>
                 <ul class="mt-3 text-slate-700 list-disc pl-5">
                   <li>Restaurants & commercial kitchens</li>
@@ -492,47 +516,120 @@
       </div>
     </section>
 
-    <!-- FAQ (content only; schema consolidated in head) -->
+    <!-- FAQ (and its schema) -->
     <section class="py-12 md:py-16 bg-brandBlue/10">
       <div class="max-w-7xl mx-auto px-4 md:px-6">
         <h2 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Frequently Asked Questions About Septic Services</h2>
         <div class="mt-6 space-y-3">
           <details class="rounded-lg bg-white p-4 shadow-soft">
             <summary class="faq-btn font-semibold text-brandBlue cursor-pointer">How often should I pump my septic tank?</summary>
-            <div class="mt-2 text-slate-700">Most homes every 3–5 years; heavy-use homes sooner. We can check levels and advise the ideal schedule.</div>
+            <div class="mt-2 text-slate-700">
+              Most homes every 3–5 years; heavy-use homes sooner. We can check
+              levels and advise the ideal schedule.
+            </div>
           </details>
           <details class="rounded-lg bg-white p-4 shadow-soft">
             <summary class="faq-btn font-semibold text-brandBlue cursor-pointer">What are signs my drain field is failing?</summary>
-            <div class="mt-2 text-slate-700">Standing water, soggy yard, sewage odors, or slow fixtures across the home. We’ll diagnose and provide options.</div>
+            <div class="mt-2 text-slate-700">
+              Standing water, soggy yard, sewage odors, or slow fixtures across
+              the home. We’ll diagnose and provide options.
+            </div>
           </details>
           <details class="rounded-lg bg-white p-4 shadow-soft">
             <summary class="faq-btn font-semibold text-brandBlue cursor-pointer">Do you handle emergency septic backups?</summary>
-            <div class="mt-2 text-slate-700">Yes — call <a href="tel:+18509993220" class="font-semibold text-brandBlue">850-999-3220</a>. We respond 24/7.</div>
+            <div class="mt-2 text-slate-700">
+              Yes — call <a href="tel:+18509993220" class="font-semibold text-brandBlue">850-999-3220</a>. We respond 24/7.
+            </div>
           </details>
           <details class="rounded-lg bg-white p-4 shadow-soft">
             <summary class="faq-btn font-semibold text-brandBlue cursor-pointer">Can you handle permits & inspections?</summary>
-            <div class="mt-2 text-slate-700">Yes. We manage permits and county compliance for repairs and drain fields.</div>
+            <div class="mt-2 text-slate-700">
+              Yes. We manage permits and county compliance for repairs and drain
+              fields.
+            </div>
           </details>
           <details class="rounded-lg bg-white p-4 shadow-soft">
             <summary class="faq-btn font-semibold text-brandBlue cursor-pointer">Do you service grease traps?</summary>
-            <div class="mt-2 text-slate-700">We provide commercial grease trap pumping and maintenance with documentation.</div>
+            <div class="mt-2 text-slate-700">
+              We provide commercial grease trap pumping and maintenance with
+              documentation.
+            </div>
           </details>
         </div>
       </div>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How often should I pump my septic tank?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most homes every 3–5 years; heavy-use homes sooner. We can check levels and advise the ideal schedule."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are signs my drain field is failing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standing water, soggy yard, sewage odors, or slow fixtures across the home. We’ll diagnose and provide options."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you handle emergency septic backups?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — call 850-999-3220. We respond 24/7."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you handle permits & inspections?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We manage permits and county compliance for repairs and drain fields."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you service grease traps?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We provide commercial grease trap pumping and maintenance with documentation."
+              }
+            }
+          ]
+        }
+      </script>
     </section>
 
-    <!-- SEO ARTICLE (revised, scannable, local; schema handled in head via WebPage) -->
+    <!-- SEO ARTICLE (revised, scannable, local) -->
     <section id="septic-article" class="relative py-12 md:py-16 bg-white overflow-hidden">
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <img src="/img/cokerbglogo.jpg" alt="Coker background logo" class="w-[1200px] md:w-[1600px] opacity-5 object-contain" />
+        <img
+          src="/img/cokerbglogo.jpg"
+          alt="Coker background logo"
+          class="w-[1200px] md:w-[1600px] opacity-5 object-contain"
+          loading="lazy" decoding="async"
+        />
       </div>
 
       <div class="relative max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-[1fr,320px] gap-10 items-start">
         <article class="max-w-3xl leading-relaxed text-slate-700 space-y-6">
-          <h2 class="font-display text-2xl md:text-3xl font-extrabold text-brandBlue">Septic Services in Pensacola & Escambia County</h2>
+          <h2 class="font-display text-2xl md:py-0 md:text-3xl font-extrabold text-brandBlue">
+            Septic Services in Pensacola & Escambia County
+          </h2>
 
           <p class="text-lg">
-            Septic issues can’t wait. Our 4th-generation, licensed & insured team responds fast—day or night—to stop overflows, diagnose the cause, and fix it the right way. Clear options, upfront pricing, and tidy work areas every time.
+            Septic issues can’t wait. Our 4th-generation, licensed & insured
+            team responds fast—day or night—to stop overflows, diagnose the
+            cause, and fix it the right way. Clear options, upfront pricing, and
+            tidy work areas every time.
           </p>
 
           <h3 class="font-display text-xl font-extrabold text-brandBlue">Common Signs It’s Time to Call</h3>
@@ -571,8 +668,10 @@
 
           <h3 class="font-display text-xl font-extrabold text-brandBlue">Drain Fields: Fix vs. Replace</h3>
           <p>
-            Field problems come from root intrusion, soil saturation, broken lines, or long-delayed pumping. Sometimes a targeted repair (lines,
-            distribution box, baffles) restores performance; other times a full replacement is the long-term fix. We explain both paths and handle
+            Field problems come from root intrusion, soil saturation, broken
+            lines, or long-delayed pumping. Sometimes a targeted repair (lines,
+            distribution box, baffles) restores performance; other times a full
+            replacement is the long-term fix. We explain both paths and handle
             permitting/inspections in Escambia County.
           </p>
 
@@ -592,7 +691,8 @@
               Need help now? Call
               <a class="font-bold text-brandBlue hover:text-brandSteel" href="tel:+18509993220">850-999-3220</a>
               or request a
-              <a href="#estimate" class="font-bold text-brandBlue hover:text-brandSteel">free estimate</a>. Need plumbing too? See our
+              <a href="#estimate" class="font-bold text-brandBlue hover:text-brandSteel">free estimate</a>.
+              Need plumbing too? See our
               <a href="/services.html" class="font-bold text-brandBlue hover:text-brandSteel">Plumbing Services</a>.
             </p>
           </div>
@@ -600,10 +700,38 @@
 
         <div class="hidden md:block">
           <div class="rounded-xl overflow-hidden shadow-soft h-64 sticky top-28">
-            <img src="/img/cokerservice.webp" alt="Local Pensacola septic crew on site" class="w-full h-full object-cover" />
+            <img
+              src="/img/cokerservice.webp"
+              alt="Local Pensacola septic crew on site"
+              class="w-full h-full object-cover"
+              loading="lazy" decoding="async"
+            />
           </div>
         </div>
       </div>
+
+      <!-- Updated Article schema -->
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Septic Services in Pensacola & Escambia County",
+          "author": {
+            "@type": "Organization",
+            "name": "Coker Plumbing & Septic"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Coker Plumbing & Septic"
+          },
+          "wordCount": "640",
+          "about": "Septic pumping, drain field repair and replacement, emergency septic service, septic tank repairs, inspections, and grease trap service in Pensacola and Escambia County.",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.coker-plumbing-septic.com/septic.html"
+          }
+        }
+      </script>
     </section>
 
     <!-- REVIEWS -->
@@ -641,7 +769,7 @@
                   action="https://formspree.io/f/movkegbb" method="POST">
               <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
               <input type="hidden" name="_subject" value="Website Free Estimate Request" />
-              <input type="hidden" name="page" value="/septic.html" />
+              <input type="hidden" name="page" value="/" />
 
               <label class="block">
                 <span class="text-sm font-semibold text-slate-700">Name</span>
@@ -701,8 +829,12 @@
             <div class="hidden md:block rounded-2xl border border-brandLite p-6 sticky top-24">
               <h3 class="font-display text-xl font-extrabold text-brandBlue">Scan to Request Service</h3>
               <p class="mt-1 text-slate-700">Open your camera and scan to jump to this form.</p>
-              <img class="mt-4 w-44 h-44" alt="QR code to Free Estimate form"
-                   src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://coker-plumbing-septic.com/#estimate" />
+              <img
+                class="mt-4 w-44 h-44"
+                alt="QR code to Free Estimate form"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.coker-plumbing-septic.com/#estimate"
+                loading="lazy" decoding="async"
+              />
               <ul class="mt-6 space-y-2 text-slate-700">
                 <li>• Free Estimates</li>
                 <li>• Upfront Pricing — No Hidden Fees</li>
@@ -720,7 +852,7 @@
       <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="grid md:grid-cols-3 gap-6 items-start">
           <div>
-            <img src="/img/cokerlogo.png" alt="Coker Plumbing & Septic" class="h-16 w-auto mb-4" />
+            <img src="/img/cokerlogo.png" alt="Coker Plumbing & Septic" class="h-16 w-auto mb-4" loading="lazy" decoding="async" />
             <p class="text-slate-700">
               <strong>Coker Plumbing &amp; Septic</strong><br />4610 Lennox Pl,
               Pensacola, FL 32514<br />License #RF11067923
@@ -758,7 +890,7 @@
         function $(s, r) { return (r || document).querySelector(s); }
         function $all(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 
-        // Footer year
+        // Footer year (no optional chaining on assignment)
         var yEl = document.getElementById("y");
         if (yEl) { yEl.textContent = new Date().getFullYear(); }
 
@@ -780,10 +912,7 @@
           a.addEventListener("click", function () {
             try {
               if (navigator.sendBeacon) {
-                var payload = new Blob(
-                  [JSON.stringify({ ts: Date.now(), page: location.pathname })],
-                  { type: "application/json" }
-                );
+                var payload = new Blob([JSON.stringify({ ts: Date.now(), page: location.pathname })], { type: "application/json" });
                 navigator.sendBeacon("/track-call", payload);
               }
             } catch (e) {}
@@ -802,17 +931,19 @@
             try { sel.dispatchEvent(new Event("change")); } catch (e) {}
           }
           var est = $("#estimate");
-          if (est && est.scrollIntoView)
-            est.scrollIntoView({ behavior: "smooth" });
+          if (est && est.scrollIntoView) est.scrollIntoView({ behavior: "smooth" });
           setTimeout(function () {
             var nameInput = document.querySelector('input[name="name"]');
-            if (nameInput) { try { nameInput.focus(); } catch (e) {} }
+            if (nameInput) {
+              try { nameInput.focus(); } catch (e) {}
+            }
           }, 300);
         }
 
         // Delegation for any [data-service]
         document.addEventListener("click", function (e) {
           var node = e.target;
+          // manual closest [data-service]
           while (node && node.nodeType === 1 && !node.hasAttribute("data-service"))
             node = node.parentNode;
           if (!node || node.nodeType !== 1) return;
@@ -832,8 +963,7 @@
             return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : "";
           }
           var svc = getParam(location.search, "service");
-          if (!svc && location.hash)
-            svc = getParam("?" + location.hash.replace(/^#/, ""), "service");
+          if (!svc && location.hash) svc = getParam("?" + location.hash.replace(/^#/, ""), "service");
           if (svc) prefillServiceAndScroll(svc);
         })();
       })();
@@ -857,10 +987,7 @@
           document.documentElement.style.setProperty("--anchor-offset", total + "px");
         }
 
-        try {
-          if (sessionStorage.getItem(KEY) === "1" && banner)
-            banner.style.display = "none";
-        } catch (e) {}
+        try { if (sessionStorage.getItem(KEY) === "1" && banner) banner.style.display = "none"; } catch (e) {}
 
         window.addEventListener("load", calcTopHeights);
         window.addEventListener("resize", calcTopHeights);
@@ -899,7 +1026,8 @@
             v("#serviceSelect") ? "Service: " + v("#serviceSelect") : "",
             v('textarea[name="message"]') ? "Message: " + v('textarea[name="message"]') : "",
             "Source: " + location.origin + location.pathname
-          ].filter(function (x) { return !!x; });
+          ];
+          lines = lines.filter(function (x) { return !!x; });
           return encodeURIComponent(lines.join("\n"));
         }
 
@@ -917,4 +1045,3 @@
     <script src="https://elfsightcdn.com/platform.js" async></script>
   </body>
 </html>
-
